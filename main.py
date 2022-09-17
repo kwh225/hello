@@ -5,7 +5,7 @@ from datetime import datetime, date
 from zhdate import ZhDate
 import sys
 import os
-from module import datetime
+
  
 def get_color():
     # 获取随机颜色
