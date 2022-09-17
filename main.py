@@ -178,10 +178,10 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             birthday_data = "距离{}的生日还有{}天".format(value["name"], birth_day)
         # 将生日数据插入data
 
-        today = datetime.date.today()
-        examination = datetime.date(year=today.year+1,month=4,day=1)
+        
+        examination = (year=today.year+1,month=4,day=1)
         examination_day = examination-today
-        birthday_data = "距离专升本还有{}天".format(examination_day)
+        birthday_data = "距离{}还有{}天".format("专升本", examination_day)
         data["data"][key] = {"value": birthday_data, "color": get_color()}
         
     headers = {
