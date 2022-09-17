@@ -59,8 +59,6 @@ def get_weather(region):
     # 风向
     wind_dir = response["now"]["windDir"]
     return weather, temp, wind_dir
-
- 
  
  
 def get_birthday(birthday, year, today):
@@ -125,9 +123,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     day = localtime().tm_mday
     today = datetime.date(datetime(year=year, month=month, day=day))
     week = week_list[today.isoweekday() % 7]
-   
-    # 获取在一起的日期差
- 
+  
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
@@ -159,7 +155,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "value": wind_dir,
                 "color": get_color()
             },
-           
+            
             "note_en": {
                 "value": note_en,
                 "color": get_color()
@@ -169,13 +165,10 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "color": get_color()
             }
         }
-    }   
-    
-def get_birthday(b, year, t): 
+    }
     for key, value in birthdays.items():
         # 获取距离下次生日的时间
         birth_day = get_birthday(value["birthday"], year, today)
-        birthday_year = birthday.split("-")[0]
         if birth_day == 0:
             birthday_data = "今天{}生日哦，祝{}生日快乐！".format(value["name"], value["name"])
         else:
