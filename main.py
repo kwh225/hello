@@ -63,7 +63,6 @@ def get_weather(region):
  
 def get_birthday(birthday, year, today):
     birthday_year = birthday.split("-")[0]
-    examination = datetime.date(year=today.year + 1, month=4, day=1)
     # 判断是否为农历生日
     if birthday_year[0] == "r":
         r_mouth = int(birthday.split("-")[1])
