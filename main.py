@@ -181,9 +181,9 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         today = datetime.date.today()
         examination = datetime.date(year=today.year+1,month=4,day=1)
         examination_day = examination-today
-        examination_date = "距离专升本还有{}天".format(examination_day)
+        birthday_data = "距离专升本还有{}天".format(examination_day)
         data["data"][key] = {"value": birthday_data, "color": get_color()}
-        data["data"][key] = {"value": examination_date, "color": get_color()}
+        
     headers = {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
