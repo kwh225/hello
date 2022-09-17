@@ -5,7 +5,7 @@ from datetime import datetime, date
 from zhdate import ZhDate
 import sys
 import os
-
+ 
  
 def get_color():
     # 获取随机颜色
@@ -60,14 +60,10 @@ def get_weather(region):
     wind_dir = response["now"]["windDir"]
     return weather, temp, wind_dir
  
-
- 
- 
  
 def get_birthday(birthday, year, today):
     birthday_year = birthday.split("-")[0]
     # 判断是否为农历生日
-    examination = datetime.date(year=today.year + 1, month=4, day=1)
     if birthday_year[0] == "r":
         r_mouth = int(birthday.split("-")[1])
         r_day = int(birthday.split("-")[2])
@@ -178,11 +174,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         else:
             birthday_data = "距离{}的生日还有{}天".format(value["name"], birth_day)
         # 将生日数据插入data
-        
-        examination_day = examination-today
-        birthday_data = "距离{}还有{}天".format("专升本", examination_day)
         data["data"][key] = {"value": birthday_data, "color": get_color()}
-        
     headers = {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
