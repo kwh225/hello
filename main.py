@@ -169,7 +169,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     }
     for key, value in birthdays.items():
         # 获取距离下次生日的时间
-        i = 1
+        i = 0
         birth_day = get_birthday(value["birthday"], year, today)
         if birth_day == 0:
             birthday_data = "今天{}生日哦，祝{}生日快乐！".format(value["name"], value["name"])
