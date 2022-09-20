@@ -187,8 +187,8 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
     }
     if i == 1
-        birthday_data1 = "距离{}还有{}天".format("专升本", birth_day)
-        data["data"][key] = {"value": birthday_data1, "color": get_color()}
+        birthday_data = "距离{}还有{}天".format("专升本", birth_day)
+        data["data"][key] = {"value": birthday_data, "color": get_color()}
     
     response = post(url, headers=headers, json=data).json()
     if response["errcode"] == 40037:
