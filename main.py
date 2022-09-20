@@ -180,7 +180,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
              birthday_data1 = "距离{}还有{}天".format("专升本", birth_day) 
         # 将生日数据插入data
         data["data"][key] = {"value": birthday_data, "color": get_color()}
-         data["data"][key] = {"value": birthday_data1, "color": get_color()}
+        data["data"][key] = {"value": birthday_data1, "color": get_color()}
     headers = {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
